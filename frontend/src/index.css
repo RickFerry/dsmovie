@@ -10,28 +10,10 @@
 }
 
 html, body {
-    background-color: #e8e8e8;
+    background-color: #E5E5E5;
 }
 
 a, a:hover {
   text-decoration: none;
   color: unset;
 }
-
-:root {
-        --color-primary: #4D41C0;
-    }
-
-    * {
-        box-sizing: border-box;
-        font-family: 'Open Sans', sans-serif;
-    }
-
-    html, body {
-        background-color: #E5E5E5;
-    }
-
-    a, a:hover {
-        text-decoration: none;
-        color: unset;
-    }
