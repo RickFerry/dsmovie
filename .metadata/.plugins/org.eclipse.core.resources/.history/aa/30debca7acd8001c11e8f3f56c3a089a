@@ -1,0 +1,5 @@
+package com.ferry.dsmovie.config;
+
+public class SecurityConfig {
+
+}
