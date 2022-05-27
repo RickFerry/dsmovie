@@ -38,13 +38,13 @@ public class ScoreService {
 		}
 
 		Movie movie = movieRepository.findById(form.getMovieId())
-				.orElseThrow(() -> new NotFoundException());
+				.orElseThrow(NotFoundException::new);
 
 		Score score = new Score();
 		score.setMovie(movie);
 		score.setUser(user);
 		score.setValue(form.getScore());
-		score = scoreRepository.saveAndFlush(score);
+		scoreRepository.saveAndFlush(score);
 
 		double sum = 0.0;
 		for (Score s : movie.getScores()) {

@@ -8,9 +8,11 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tb_user")
 public class User {
@@ -20,6 +22,4 @@ public class User {
 	private Long id;
 	private String email;
 	
-	public User() {
-	}
 }

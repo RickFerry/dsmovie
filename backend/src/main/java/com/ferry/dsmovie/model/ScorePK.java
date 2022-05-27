@@ -8,9 +8,11 @@ import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Embeddable
+@NoArgsConstructor
 @AllArgsConstructor
 public class ScorePK implements Serializable {
 	private static final long serialVersionUID = -366035109448142341L;
@@ -23,5 +25,4 @@ public class ScorePK implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	public ScorePK() {}
 }

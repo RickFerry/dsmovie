@@ -17,10 +17,10 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/scores")
 public class ScoreController {
 	
-	private ScoreService ScoreService;
+	private ScoreService scoreService;
 	
 	@PutMapping
 	public MovieDTO saveScore(@RequestBody ScoreDTO form) throws NotFoundException {
-		return ScoreService.saveScore(form);
+		return scoreService.saveScore(form);
 	}
 }

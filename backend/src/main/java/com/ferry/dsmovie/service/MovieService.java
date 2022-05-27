@@ -31,7 +31,7 @@ public class MovieService {
 	@Transactional
 	public MovieDTO findOne(Long id) throws NotFoundException {
 		Movie movie = movieRepository.findById(id).orElseThrow(
-				() -> new NotFoundException());
+				NotFoundException::new);
 		return modelMapper.map(movie, MovieDTO.class);
 	}
 }
