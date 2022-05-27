@@ -13,7 +13,7 @@ import lombok.Data;
 @Embeddable
 @AllArgsConstructor
 public class ScorePK implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -366035109448142341L;
 
 	@ManyToOne
 	@JoinColumn(name = "movie_id")
@@ -23,6 +23,5 @@ public class ScorePK implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	public ScorePK() {
-	}
+	public ScorePK() {}
 }
