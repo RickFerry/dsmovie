@@ -24,9 +24,8 @@ public class ScoreService {
 	private MovieRepository movieRepository;
 	private UserRepository userRepository;
 	private ScoreRepository scoreRepository;
-
 	private ModelMapper modelMapper;
-
+	
 	@Transactional
 	public MovieDTO saveScore(ScoreDTO form) throws NotFoundException {
 
@@ -37,8 +36,7 @@ public class ScoreService {
 			user = userRepository.saveAndFlush(user);
 		}
 
-		Movie movie = movieRepository.findById(form.getMovieId())
-				.orElseThrow(NotFoundException::new);
+		Movie movie = movieRepository.findById(form.getMovieId()).orElseThrow(NotFoundException::new);
 
 		Score score = new Score();
 		score.setMovie(movie);
@@ -50,6 +48,7 @@ public class ScoreService {
 		for (Score s : movie.getScores()) {
 			sum = sum + s.getValue();
 		}
+
 		double avg = sum / movie.getScores().size();
 
 		movie.setScore(avg);

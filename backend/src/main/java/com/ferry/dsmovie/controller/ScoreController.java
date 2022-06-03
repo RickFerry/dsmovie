@@ -1,5 +1,6 @@
 package com.ferry.dsmovie.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,8 +18,9 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/scores")
 public class ScoreController {
 	
+	@Autowired
 	private ScoreService scoreService;
-	
+
 	@PutMapping
 	public MovieDTO saveScore(@RequestBody ScoreDTO form) throws NotFoundException {
 		return scoreService.saveScore(form);

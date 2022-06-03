@@ -19,7 +19,6 @@ import lombok.AllArgsConstructor;
 public class MovieService {
 
 	private MovieRepository movieRepository;
-
 	private ModelMapper modelMapper;
 
 	@Transactional
@@ -27,11 +26,10 @@ public class MovieService {
 		Page<Movie> result = movieRepository.findAll(pageable);
 		return result.map(x -> modelMapper.map(x, MovieDTO.class));
 	}
-	
+
 	@Transactional
 	public MovieDTO findOne(Long id) throws NotFoundException {
-		Movie movie = movieRepository.findById(id).orElseThrow(
-				NotFoundException::new);
+		Movie movie = movieRepository.findById(id).orElseThrow(NotFoundException::new);
 		return modelMapper.map(movie, MovieDTO.class);
 	}
 }

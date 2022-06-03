@@ -1,10 +1,14 @@
 package com.ferry.dsmovie.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class MovieDTO {
 
 	private Long id;

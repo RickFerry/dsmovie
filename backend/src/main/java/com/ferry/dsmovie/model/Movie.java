@@ -10,14 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "tb_movie")
 public class Movie {
 
@@ -31,5 +29,4 @@ public class Movie {
 	
 	@OneToMany(mappedBy = "id.movie")
 	private Set<Score> scores = new HashSet<>();
-	
 }
